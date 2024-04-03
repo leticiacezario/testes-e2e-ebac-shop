@@ -24,32 +24,19 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         })
         
         produtosPage.buscarProdutos('Augusta Pullover Jacket')
-        cy.get('.product_title').should('contain','Augusta Pullover Jacket')
-        cy.get('.button-variable-item-M').click()
-        cy.get('.button-variable-item-Orange').click()
-        cy.get('.button-variable-item-M').click() //Tive que repetir essa linha do codigo para todos os produtos pq sempre que selecionava a cor, ele desmarcava o tamanho
-        
+        produtosPage.adicionarProduto('Augusta Pullover Jacket')
         produtosPage.comprarProduto()
 
         produtosPage.buscarProdutos ('Ariel Roll Sleeve Sweatshirt')
-        cy.get('.product_title').should('contain','Ariel Roll Sleeve Sweatshirt')
-        cy.get('.button-variable-item-S').click()
-        cy.get('.button-variable-item-Green').click()
-        cy.get('.button-variable-item-S').click() //Tive que repetir essa linha do codigo para todos os produtos pq sempre que selecionava a cor, ele desmarcava o tamanho
+        produtosPage.adicionarProduto ('Ariel Roll Sleeve Sweatshirt')
         produtosPage.comprarProduto()
 
         produtosPage.buscarProdutos ('Circe Hooded Ice Fleece')
-        cy.get('.product_title').should('contain','Circe Hooded Ice Fleece')
-        cy.get('.button-variable-item-S').click()
-        cy.get('.button-variable-item-Green').click()
-        cy.get('.button-variable-item-S').click() //Tive que repetir essa linha do codigo para todos os produtos pq sempre que selecionava a cor, ele desmarcava o tamanho
+        produtosPage.adicionarProduto ('Circe Hooded Ice Fleece')
         produtosPage.comprarProduto()
 
-        produtosPage.buscarProdutos ('Aether Gym Pant')
-        cy.get('.product_title').should('contain','Aether Gym Pant')
-        cy.get('.button-variable-item-32').click()
-        cy.get('.button-variable-item-Green').click()
-        cy.get('.button-variable-item-32').click() //Tive que repetir essa linha do codigo para todos os produtos pq sempre que selecionava a cor, ele desmarcava o tamanho
+        produtosPage.buscarProdutos ('Eos V-Neck Hoodie')
+        produtosPage.adicionarProduto ('Eos V-Neck Hoodie')
         produtosPage.comprarProduto()
 
         produtosPage.finalizarCompra()

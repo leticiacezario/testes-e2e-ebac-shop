@@ -17,6 +17,13 @@ class ProdutosPage {
 
     }
 
+    adicionarProduto(nomeProduto){
+        cy.get('.product_title').should('contain', (nomeProduto))
+        cy.get(':nth-child(1) > .value > .variable-items-wrapper').first().click()
+        cy.get(':nth-child(2) > .value > .variable-items-wrapper').first().click()
+        cy.get(':nth-child(1) > .value > .variable-items-wrapper').first().click() //Tive que repetir essa linha do codigo para todos os produtos pq sempre que selecionava a cor, ele desmarcava o tamanho
+    }
+
     comprarProduto() {
 
         var quantidade = 1
